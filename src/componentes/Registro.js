@@ -24,8 +24,7 @@ const userCredential = await createUserWithEmailAndPassword(auth,
 correo, contrasena);
 const user = userCredential.user;
 
-// 🔁 Guardar datos en Firestore con el mismo UID como ID del
-documento
+// 🔁 Guardar datos en Firestore con el mismo UID como ID del documento
 await setDoc(doc(db, 'usuarios', user.uid), {
 uid: user.uid,
 nombre,
@@ -38,7 +37,6 @@ perdidos
 });
 
 Alert.alert('Éxito', 'Usuario registrado correctamente');
-navigation.navigate('Login'); // o a Home si prefieres
 } catch (error) {
 Alert.alert('Error al registrarse', error.message);
 }
